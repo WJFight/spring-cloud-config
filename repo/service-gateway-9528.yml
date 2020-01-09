@@ -2,7 +2,7 @@ server:
   port: 9528
 mybatis:
 #  config-location: classpath:mybatis/mybatis.cfg.xml
-#  type-aliases-package: org.wj.springcloud.dto
+#  type-aliases-package: org.wj.springcloud.pojo
 #  mapper-locations: classpath:mybatis/mapper/*.xml
 spring:
   application:
