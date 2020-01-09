@@ -1,6 +1,17 @@
 server:
   port: 7001
-
+spring:
+  application:
+    name: service-registry
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+  sleuth:
+    sampler:
+      probability: 1
+  boot:
+    admin:
+      client:
+        url: http://localhost:9011
 eureka:
   instance:
     hostname: eureka7001.com #eureka服务端的实例名称

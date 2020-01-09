@@ -10,3 +10,12 @@ eureka:
 spring:
   application:
     name: HystrixDashboard-client
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+    sleuth:
+      sampler:
+        probability: 1
+  boot:
+    admin:
+      client:
+        url: http://localhost:9011
