@@ -32,6 +32,8 @@ management:
   endpoint:
     health:
       show-details: always
+  security:
+    enabled: true
 eureka:
   client:
     service-url:
