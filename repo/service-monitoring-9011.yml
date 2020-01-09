@@ -10,6 +10,10 @@ eureka:
 spring:
   application:
     name: service-monitoring
+  security:
+    user:
+      name: "admin"
+      password: "admin"
   zipkin:
     base-url: http://127.0.0.1:9411/
     sleuth:
