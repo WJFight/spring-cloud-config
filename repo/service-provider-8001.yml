@@ -23,6 +23,14 @@ spring:
     admin:
       client:
         url: http://localhost:9011
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
 eureka:
   client:
     service-url:
