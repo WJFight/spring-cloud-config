@@ -1,6 +1,7 @@
 server:
-  port: 8002
+  port: 8001
 spring:
+  d-name: zs
   application:
     name: smart-mall-service-provider-demo
   datasource:
