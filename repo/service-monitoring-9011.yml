@@ -1,0 +1,26 @@
+server:
+  port: 9011
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: service-monitoring-9011
+    prefer-ip-address: true
+spring:
+  application:
+    name: service-monitoring
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+    sleuth:
+      sampler:
+        probability: 1
+##健康检查
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        exclude: ["health","info"]
