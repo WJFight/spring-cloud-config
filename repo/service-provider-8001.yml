@@ -1,7 +1,7 @@
 server:
   port: 8001
 spring:
-  d-name: ww
+  d-name: 222
   application:
     name: smart-mall-service-provider-demo
   datasource:
