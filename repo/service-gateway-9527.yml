@@ -1,12 +1,13 @@
 server:
   port: 9527
-mybatis:
-#  config-location: classpath:mybatis/mybatis.cfg.xml
-#  type-aliases-package: org.wj.springcloud.pojo
-#  mapper-locations: classpath:mybatis/mapper/*.xml
+mybatis-plus:
+  type-aliases-package: com.smart.mall.dto
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    cache-enabled: true
 spring:
   application:
-    name: micservicecloud-zuul-gateway
+    name: service-zuul-gateway
   zipkin:
     base-url: http://127.0.0.1:9411/
     sleuth:
@@ -41,7 +42,7 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://service-registry-7001.com:7001/eureka/,http://service-registry-7002.com:7002/eureka/,http://service-registry-7003.com:7003/eureka/
   instance:
     instance-id: gateway-9527.com  #要做域名映射  在host 127.0.0.1 gateway-9527.com
     prefer-ip-address: true
@@ -54,7 +55,7 @@ zuul:
       serviceId: smart-mall-service-provider-demo #把该名字映射为mydept
       path: /api1/**
     api-b:
-      serviceId: microservicecloud-dept2
+      serviceId: service-zuul-gateway
       path: /api2/**
     api-c:
       serviceId: MICROSERVICECLOUD-PURCHASE
