@@ -58,7 +58,7 @@ zuul:
       serviceId: service-zuul-gateway
       path: /api2/**
     api-c:
-      serviceId: MICROSERVICECLOUD-PURCHASE
+      serviceId: smart-mall-service-provider-order
       path: /api3/**
   FormBodyWrapperFilter:
     pre:
