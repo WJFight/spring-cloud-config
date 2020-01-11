@@ -67,6 +67,8 @@ eureka:
   instance:
     instance-id: service-provider-8001
     prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 5
 info:
   app.name: wj-microservicecloud
   company.name: www.wj.com
@@ -122,6 +124,8 @@ eureka:
   instance:
     instance-id: service-provider-8001
     prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 5
 info:
   app.name: wj-microservicecloud
   company.name: www.wj.com
