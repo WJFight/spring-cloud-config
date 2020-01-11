@@ -70,3 +70,13 @@ info:
   build.version: $project.version$
 swagger:
   enable: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
+ribbon:
+  ConnectionTimeout: 500
+  ReadTimeout: 2000
