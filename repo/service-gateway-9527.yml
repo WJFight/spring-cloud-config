@@ -58,7 +58,7 @@ zuul:
       serviceId: service-zuul-gateway
       path: /api2/**
     api-c:
-      serviceId: smart-mall-service-provider-order
+      serviceId: smart-mall-service-provider-admin
       path: /api3/**
   FormBodyWrapperFilter:
     pre:
