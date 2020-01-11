@@ -19,6 +19,9 @@ spring:
     admin:
       client:
         url: http://localhost:9011
+feign:
+  hystrix:
+    enabled: true
 management:
   endpoints:
     web:
