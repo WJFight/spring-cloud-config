@@ -71,6 +71,9 @@ info:
   company.name: www.wj.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+feign:
+  hystrix:
+    enabled: true
 ---
 server:
   port: 8002
@@ -128,3 +131,6 @@ info:
   company.name: www.wj.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+feign:
+  hystrix:
+    enabled: true

@@ -3,6 +3,9 @@ spring:
     active:
       - dev
 ---
+feign:
+  hystrix:
+    enabled: true
 server:
   port: 8001
 mybatis-plus:
@@ -75,6 +78,9 @@ info:
   build.artifactId: $project.artifactId$
   build.version: $project.version$
 ---
+feign:
+  hystrix:
+    enabled: true
 server:
   port: 8001
 mybatis-plus:
