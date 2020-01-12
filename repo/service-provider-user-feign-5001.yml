@@ -5,7 +5,13 @@ spring:
 ---
 server:
   port: 5001
+mybatis-plus:
+  type-aliases-package: com.smart.mall.dto
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    cache-enabled: true
 spring:
+  d-name: dev
   profiles: dev
   application:
     name: service-provider-user-feign
@@ -32,9 +38,6 @@ spring:
         max-active: 12
         max-idle: 8
         min-idle: 2
-  #      sentinel:
-  #        master: mymaster
-  #        nodes: 192.168.2.128:26379,192.168.2.129:26379,192.168.2.130:26379
   zipkin:
     base-url: http://127.0.0.1:9411/
     sleuth:
@@ -52,22 +55,35 @@ management:
   endpoint:
     health:
       show-details: always
+  security:
+    enabled: true
 eureka:
   client:
     service-url:
       defaultZone: http://service-registry-7001.com:7001/eureka/,http://service-registry-7002.com:7002/eureka/,http://service-registry-7003.com:7003/eureka/
   instance:
-    instance-id: service-provider-user-feign
+    instance-id: service-provider-user-feign-5001
     prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 5
 info:
   app.name: wj-microservicecloud
   company.name: www.wj.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+feign:
+  hystrix:
+    enabled: true
 ---
 server:
   port: 5001
+mybatis-plus:
+  type-aliases-package: com.smart.mall.dto
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    cache-enabled: true
 spring:
+  d-name: prod
   profiles: prod
   application:
     name: service-provider-user-feign
@@ -99,12 +115,14 @@ management:
   endpoint:
     health:
       show-details: always
+  security:
+    enabled: true
 eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: service-provider-user-feign
+    instance-id: service-provider-user-feign-5001
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 5
@@ -116,23 +134,3 @@ info:
 feign:
   hystrix:
     enabled: true
-  compression:
-    response:
-      enabled: true
-    request:
-      enabled: true
-      mime-types: text/xml,applicaton/xml,application/json
-      min-request-size: 2048
-
-ribbon:
-  okhttp:
-    enabled: true
-  http:
-    client:
-      enabled: false
-#SMART-MALL-SERVICE-PROVIDER-DEMO:
-#  ribbon:
-#    NFLoadBalancerRuleClassName=com:
-#      netflix:
-#        loadbalancer:
-#          RandomRule: BestAvailableRule
