@@ -52,7 +52,7 @@ zuul:
   prefix: /wj #加访问前缀
   routes:
     api-a:
-      serviceId: smart-mall-service-provider-demo #把该名字映射为mydept
+      serviceId: smart-mall-service-provider-user #把该名字映射为mydept
       path: /api1/**
     api-b:
       serviceId: service-zuul-gateway
