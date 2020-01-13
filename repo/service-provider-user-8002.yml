@@ -3,11 +3,8 @@ spring:
     active:
       - dev
 ---
-feign:
-  hystrix:
-    enabled: true
 server:
-  port: 8001
+  port: 8002
 mybatis-plus:
   type-aliases-package: com.smart.mall.dto
   mapper-locations: classpath:mapper/*.xml
@@ -17,7 +14,7 @@ spring:
   d-name: dev
   profiles: dev
   application:
-    name: smart-mall-service-provider-demo
+    name: smart-mall-service-provider-user
   datasource:
     url: jdbc:mysql://localhost:3306/cloudDB03?serverTimezone=UTC
     type: com.alibaba.druid.pool.DruidDataSource
@@ -41,9 +38,6 @@ spring:
         max-active: 12
         max-idle: 8
         min-idle: 2
-  #      sentinel:
-  #        master: mymaster
-  #        nodes: 192.168.2.128:26379,192.168.2.129:26379,192.168.2.130:26379
   zipkin:
     base-url: http://127.0.0.1:9411/
     sleuth:
@@ -68,7 +62,7 @@ eureka:
     service-url:
       defaultZone: http://service-registry-7001.com:7001/eureka/,http://service-registry-7002.com:7002/eureka/,http://service-registry-7003.com:7003/eureka/
   instance:
-    instance-id: service-provider-8001
+    instance-id: service-provider-8002
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 5
@@ -77,12 +71,12 @@ info:
   company.name: www.wj.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
----
 feign:
   hystrix:
     enabled: true
+---
 server:
-  port: 8001
+  port: 8002
 mybatis-plus:
   type-aliases-package: com.smart.mall.dto
   mapper-locations: classpath:mapper/*.xml
@@ -92,7 +86,7 @@ spring:
   d-name: prod
   profiles: prod
   application:
-    name: smart-mall-service-provider-demo
+    name: smart-mall-service-provider-user
   datasource:
     url: jdbc:mysql://localhost:3306/cloudDB02?serverTimezone=UTC
     type: com.alibaba.druid.pool.DruidDataSource
@@ -128,7 +122,7 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: service-provider-8001
+    instance-id: service-provider-8002
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 5
@@ -137,3 +131,6 @@ info:
   company.name: www.wj.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+feign:
+  hystrix:
+    enabled: true
