@@ -30,6 +30,8 @@ spring:
       max-total: 5
       max-wait-millis: 200
       cache-state: true
+  main:
+    allow-bean-definition-overriding: true
   redis:
     port: 6379
     database: 0
