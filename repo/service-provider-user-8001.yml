@@ -106,6 +106,8 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
+  main:
+    allow-bean-definition-overriding: true
   zipkin:
     base-url: http://127.0.0.1:9411/
     sleuth:
