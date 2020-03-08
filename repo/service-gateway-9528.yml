@@ -60,6 +60,9 @@ zuul:
     api-c:
       serviceId: smart-mall-service-provider-admin
       path: /api3/**
+    api-d:
+      serviceId: SERVICE-PROVIDER-SSO
+      path: /sso/**
   FormBodyWrapperFilter:
     pre:
       disable: false
