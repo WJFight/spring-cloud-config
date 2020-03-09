@@ -66,6 +66,7 @@ zuul:
   host:
     socket-timeout-millis: 12000
     connect-timeout-millis: 12000
+  sensitive-headers: Cookie,Set-Cookie
   FormBodyWrapperFilter:
     pre:
       disable: false
@@ -86,3 +87,4 @@ hystrix:
 ribbon:
   ConnectionTimeout: 500
   ReadTimeout: 2000
+
