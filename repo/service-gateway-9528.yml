@@ -63,6 +63,9 @@ zuul:
     api-d:
       serviceId: SERVICE-PROVIDER-SSO
       path: /sso/**
+  host:
+    socket-timeout-millis: 12000
+    connect-timeout-millis: 12000
   FormBodyWrapperFilter:
     pre:
       disable: false
