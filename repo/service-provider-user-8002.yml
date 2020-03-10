@@ -145,8 +145,6 @@ rabbitmq:
   port: 5672
   username: guest
   password: guest
-  #确认消息已发送到交换机
-  publisher-confirms: true
-  #确认消息已经发送到队列(queue)
-  publisher-returns: true
+  publisher-confirms: true #消息发送到交换机确认机制，是否确认回调
+  publisher-returns: true  #消息发送到交换机确认机制，是否返回回调
 #  virtual-host: /vhost_wj
