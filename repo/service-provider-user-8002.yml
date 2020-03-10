@@ -2,6 +2,12 @@ spring:
   profiles:
     active:
       - dev
+rabbitmq:
+  host: 127.0.0.1
+  port: 5672
+  username: user_wj
+  password: 123
+  virtual-host: /vhost_wj
 ---
 server:
   port: 8002
