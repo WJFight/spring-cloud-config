@@ -143,6 +143,6 @@ feign:
 rabbitmq:
   host: 127.0.0.1
   port: 5672
-  username: user_wj
-  password: 123
+  username: guest
+  password: guest
   virtual-host: /vhost_wj
