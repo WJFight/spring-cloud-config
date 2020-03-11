@@ -18,6 +18,16 @@ spring:
   profiles: dev
   application:
     name: smart-mall-service-provider-user
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    #确认消息已发送到交换机(Exchange)
+    publisher-confirms: true
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true
+  #  virtual-host: /vhost_wj
   datasource:
     url: jdbc:mysql://localhost:3306/service_user?serverTimezone=UTC
     type: com.alibaba.druid.pool.DruidDataSource
@@ -101,6 +111,16 @@ spring:
   profiles: prod
   application:
     name: smart-mall-service-provider-user
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    #确认消息已发送到交换机(Exchange)
+    publisher-confirms: true
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true
+  #  virtual-host: /vhost_wj
   datasource:
     url: jdbc:mysql://localhost:3306/cloudDB02?serverTimezone=UTC
     type: com.alibaba.druid.pool.DruidDataSource
@@ -147,9 +167,3 @@ info:
   company.name: www.wj.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-rabbitmq:
-  host: 127.0.0.1
-  port: 5672
-  username: guest
-  password: guest
-#  virtual-host: /vhost_wj
